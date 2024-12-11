@@ -39,7 +39,7 @@ def clean_data(album_df, track_df):
     album_df = album_df[required_album_columns]
     if not album_df.empty:  # Check if DataFrame is not empty before applying drop_duplicates
         album_df.drop_duplicates(inplace=True)
-        
+
     album_df.dropna(subset=required_album_columns, inplace=True)  # Drop rows with missing values
 
     # Select required columns for tracks
@@ -47,7 +47,7 @@ def clean_data(album_df, track_df):
     track_df = track_df[required_track_columns]
     if not track_df.empty:  # Check if DataFrame is not empty before applying drop_duplicates
         track_df.drop_duplicates(inplace=True)
-        
+
     track_df.dropna(subset=required_track_columns, inplace=True)  # Drop rows with missing values
 
     # To print cleaned DataFrames
@@ -59,7 +59,7 @@ def clean_data(album_df, track_df):
 # Function to transform the data by adding a radio_mix column and filtering tracks
 def transform_data(album_df, track_df):
     # Categorize songs based on duration
-    album_df['radio_mix'] = album_df['duration_ms'].apply(lambda x: x / 60000 <= 3)
+    album_df['radio_mix'] = album_df['duration_ms'].apply(lambda x: x / 60000 <= 3)    # applying lamda function to duration_ms to check 3 min duration
 
     # Filter tracks to include only non-explicit and popular tracks
     track_df = track_df[(track_df['explicit'] == False) & (track_df['track_popularity'] > 50)]
