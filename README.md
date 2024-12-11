@@ -62,9 +62,16 @@ Pipeline Components-
 3. Visualization:
         Looker Studio:
             Connect to BigQuery for creating dashboards and visualizations.
+   
+5. Monitoring:
+        Cloud Monitoring:
+            Monitor pipeline health, latency, and errors.
+        Logging:
+            Capture logs for debugging using Cloud Logging.
 
 Below are steps we will follow to create a GCP piepline :- 
 Step 1: Upload raw data to Cloud Storage.
 Step 2: Pub/Sub triggers a pipeline job in Dataflow for ETL processes.
 Step 3: Transformed data is loaded into BigQuery.
 Step 4: Reports and dashboards are created in Looker Studio.
+Step 5: Use Cloud Monitoring for real-time performance tracking  
