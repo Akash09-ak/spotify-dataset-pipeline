@@ -37,11 +37,17 @@ def clean_data(album_df, track_df):
                               'album_type', 'total_tracks', 'album_name', 'release_date',
                               'label', 'album_popularity', 'album_id', 'artist_id', 'artist_0']
     album_df = album_df[required_album_columns]
+    if not album_df.empty:  # Check if DataFrame is not empty before applying drop_duplicates
+        album_df.drop_duplicates(inplace=True)
+        
     album_df.dropna(subset=required_album_columns, inplace=True)  # Drop rows with missing values
 
     # Select required columns for tracks
     required_track_columns = ['id', 'track_popularity', 'explicit']
     track_df = track_df[required_track_columns]
+    if not track_df.empty:  # Check if DataFrame is not empty before applying drop_duplicates
+        track_df.drop_duplicates(inplace=True)
+        
     track_df.dropna(subset=required_track_columns, inplace=True)  # Drop rows with missing values
 
     # To print cleaned DataFrames
