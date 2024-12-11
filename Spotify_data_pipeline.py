@@ -13,15 +13,22 @@ def download_kaggle_data(dataset, path):
 def load_csv_files(path):
     albums_path = os.path.join(path, "spotify-albums_data_2023.csv")
     tracks_path = os.path.join(path, "spotify_tracks_data_2023.csv")
+
     try:
         # Load CSV data into DataFrames
         albums_df = pd.read_csv(albums_path)
         tracks_df = pd.read_csv(tracks_path)
+
+        # Check for empty DataFrames
+        if albums_df.empty or tracks_df.empty:
+            print("Error: One or both DataFrames are empty.")
+            exit(1)            # Exit the program if DataFrames are empty
+
         print(f"Loaded CSV files: {albums_path} and {tracks_path}")
         return albums_df, tracks_df
     except pd.errors.ParserError:
         print(f"Error: Files at {albums_path} and {tracks_path} are not valid CSV formats.")
-        exit(1)  # Exit the program if CSV files are invalid
+        exit(1)               # Exit the program if CSV files are invalid
 
 # Function to clean the DataFrames by dropping unnecessary columns and rows with missing values
 def clean_data(album_df, track_df):
