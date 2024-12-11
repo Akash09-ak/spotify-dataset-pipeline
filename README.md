@@ -10,7 +10,6 @@ Below is the stepwise explanation of what code does-
 2. Load CSV Files:
 
     The load_csv_files function takes a path and reads two CSV files ("spotify-albums_data_2023.csv" and "spotify-tracks_data_2023.csv") into pandas DataFrames (albums_df and tracks_df).
-    It checks if either DataFrame is empty. If so, it exits with an error message.
 
 3. Clean Data :
 
