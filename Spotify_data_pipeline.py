@@ -115,7 +115,7 @@ if __name__ == "__main__":
     """
 
     top_tracks_query = """
-        SELECT * 
+        SELECT track_name, track_id, track_number, duration_ms, release_date, label, album_popularity, artist_0, radio_mix
         FROM transformed_album
         WHERE release_date BETWEEN '2020-01-01' AND '2023-01-01'
         ORDER BY album_popularity DESC 
