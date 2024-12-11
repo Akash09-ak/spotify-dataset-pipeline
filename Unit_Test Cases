@@ -1,0 +1,25 @@
+Unit Test Case Scenarios we can check for Spotify Data Analysis
+
+clean_data function:
+
+    Empty DataFrame: Test if the function handles empty DataFrames correctly.
+    All Missing Values: Test if the function handles DataFrames with all missing values.
+    Correct File Format: Check whether the file format is csv or not.
+    Invalid Data Types: Test if the function raises appropriate errors for invalid data types (e.g., non-numeric values in numeric columns).
+    Unnecessary Columns: Test if the function correctly removes unnecessary columns.
+    Duplicate Rows: Test if the function handles duplicate rows appropriately (e.g., by removing them).
+
+transform_data function:
+
+    Radio Mix Categorization: Test if the radio_mix column is correctly calculated based on the duration_ms column.
+    Explicit Track Filtering: Test if explicit tracks are correctly filtered out.
+    Popularity Filter: Test if tracks with popularity below the threshold are filtered out.
+
+load_to_database function:
+
+    Successful Load: Test if the DataFrame is successfully loaded into the SQLite database.
+    Table Creation: Test if the table is created correctly if it doesn't exist.
+    Data Integrity: Test if the data is loaded correctly and without data loss.
+    Error Handling: Test if the function handles errors like database connection failures or table creation issues.
+
+
