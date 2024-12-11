@@ -1,6 +1,8 @@
 # spotify-dataset-pipeline
 This repository contains Python code to extract, clean, transform, and load Spotify dataset into a SQLite database. The code also performs basic data analysis.
+It also has a GCP pipeline architecture workflow for same spotify data analysis.
 
+# TASK 1
 Below is the stepwise explanation of what code does-
 
 1. Download Data (if needed):
@@ -37,3 +39,32 @@ Below is the stepwise explanation of what code does-
         top_labels_query: Finds top labels with the most tracks.
         top_tracks_query: Finds top popular tracks released between 2020-01-01 and 2023-01-01.
     The query_database function executes these queries on the database and returns the results as DataFrames.
+
+
+# TASK 2
+
+GCP Architechture Based Data Pipeline Design:
+
+Pipeline Components-
+
+1. Extraction: 
+        Cloud Storage:
+            Store raw CSV files uploaded from Kaggle.
+        Pub/Sub:
+            Trigger notifications when new files are added.
+
+2. Processing:
+        Dataflow:
+            Clean and transform data (filter columns, handle null values, add radio_mix column).
+        BigQuery:
+            Load the processed data for querying and analysis.
+
+3. Visualization:
+        Looker Studio:
+            Connect to BigQuery for creating dashboards and visualizations.
+
+Below are steps we will follow to create a GCP piepline :- 
+Step 1: Upload raw data to Cloud Storage.
+Step 2: Pub/Sub triggers a pipeline job in Dataflow for ETL processes.
+Step 3: Transformed data is loaded into BigQuery.
+Step 4: Reports and dashboards are created in Looker Studio.
