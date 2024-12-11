@@ -15,22 +15,23 @@ Below is the stepwise explanation of what code does-
 
     The clean_data function takes both DataFrames and performs cleaning steps:
         Selects relevant columns for each DataFrame.
+        Removes duplicates records.
         Removes rows with missing values (dropna).
     You can optionally uncomment the print statements to view the cleaned DataFrames.
 
-4. Transform Data :
+5. Transform Data :
 
     The transform_data function takes the cleaned DataFrames:
         Adds a new column radio_mix to the albums DataFrame based on the duration.
         Filters the tracks DataFrame to include only non-explicit and popular tracks.
     You can optionally uncomment the print statements to view the transformed DataFrames.
 
-5. Load Data into Database:
+6. Load Data into Database:
 
     The load_to_database function takes a DataFrame, database name, and table name.
     It connects to the SQLite database and loads the DataFrame into a table (replacing existing data if it exists).
 
-6. Execute SQL Queries :
+7. Execute SQL Queries :
 
     The code defines two example SQL queries:
         top_labels_query: Finds top labels with the most tracks.
