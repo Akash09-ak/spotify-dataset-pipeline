@@ -1,0 +1,5 @@
+Install all these package before running the code-
+
+kaggle
+pandas
+sqlite
