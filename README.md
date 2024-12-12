@@ -1,6 +1,6 @@
 # spotify-dataset-pipeline
 This repository contains Python code to extract, clean, transform, and load Spotify dataset into a SQLite database. The code also performs basic data analysis.
-It also has a GCP pipeline architecture workflow for same spotify data analysis.
+It also has a GCP pipeline architecture workflow for same spotify data analysis. 
 
 # TASK 1
 Below is the stepwise explanation of what code does-
