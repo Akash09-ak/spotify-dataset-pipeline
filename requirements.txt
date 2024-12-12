@@ -3,3 +3,5 @@ Install all these package before running the code-
 kaggle
 pandas
 sqlite
+
+Download kaggle.json file and place it in .kaggle folder in your system.
