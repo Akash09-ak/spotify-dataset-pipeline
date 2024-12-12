@@ -8,7 +8,7 @@ def download_kaggle_data(dataset, path):
     api = KaggleApi()
     api.authenticate()  # Authenticate with Kaggle API credentials
     api.dataset_download_files(dataset, path=path, unzip=True)  # Download and unzip dataset
-
+ 
 # Function to load CSV files from specified paths
 def load_csv_files(path):
     albums_path = os.path.join(path, "spotify-albums_data_2023.csv")
