@@ -1,25 +1,18 @@
 Unit Test Case Scenarios we can check for Spotify Data Analysis
 
-clean_data function:
+ Input Validation and Handling:
+1. Empty DataFrame: Verify the function handles empty DataFrames without errors.  
+2. All Missing Values: Confirm the function handles DataFrames with all missing values appropriately.  
+3. Correct File Format: Ensure the function checks for a valid file format (e.g., CSV).  
+4. Invalid Data Types: Test if the function raises appropriate errors for invalid data types (e.g., non-numeric values in numeric columns).  
+5. Unnecessary Columns: Validate that unnecessary columns are identified and removed correctly.  
+6. Duplicate Rows: Check if duplicate rows are identified and removed as expected.  
 
-    Empty DataFrame: Test if the function handles empty DataFrames correctly.
-    All Missing Values: Test if the function handles DataFrames with all missing values.
-    Correct File Format: Check whether the file format is csv or not.
-    Invalid Data Types: Test if the function raises appropriate errors for invalid data types (e.g., non-numeric values in numeric columns).
-    Unnecessary Columns: Test if the function correctly removes unnecessary columns.
-    Duplicate Rows: Test if the function handles duplicate rows appropriately (e.g., by removing them).
+ Data Transformation:
+7. Radio Mix Categorization: Test if the `radio_mix` column is accurately calculated based on the `duration_ms` column.  
+8. Explicit Track Filtering: Verify that explicit tracks are correctly filtered out.  
+9. Popularity Filter: Ensure tracks with popularity below a specified threshold are excluded.  
 
-transform_data function:
-
-    Radio Mix Categorization: Test if the radio_mix column is correctly calculated based on the duration_ms column.
-    Explicit Track Filtering: Test if explicit tracks are correctly filtered out.
-    Popularity Filter: Test if tracks with popularity below the threshold are filtered out.
-
-load_to_database function:
-
-    Successful Load: Test if the DataFrame is successfully loaded into the SQLite database.
-    Table Creation: Test if the table is created correctly if it doesn't exist.
-    Data Integrity: Test if the data is loaded correctly and without data loss.
-    Error Handling: Test if the function handles errors like database connection failures or table creation issues.
-
-
+ Data Storage:
+10. Successful Load: Confirm the DataFrame is successfully loaded into the SQLite database.  
+11. Data Integrity: Verify that data is loaded without loss or corruption and retains its accuracy.  
